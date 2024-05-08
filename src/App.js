@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar'
+import Header from './components/Header'
+import ItemsFilter from './components/itemsFilter/ItemsFilter'
+import Sidebar from './components/cart/sidebar/Sidebar'
+import { discount } from './components/assets/data'
+import { popular } from './components/assets/data'
+import Footer from './components/Footer'
+import Popular from './components/popular/Popular'
+import Special from './components/Special'
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Navbar />
+      <Sidebar data={discount} />
+      <Header />
+      <ItemsFilter />
+      <Special />
+      <Popular data={popular} />
+      <Footer />
+
+    </>
+  )
+
 }
+
 
 export default App;
